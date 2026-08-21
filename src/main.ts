@@ -147,20 +147,15 @@
  * - se till att TypeScript-checken är aktiverad
  * - fixa eventuella TypeScript-fel
  */
+
 import "./style.css";
 import type { BudgetItem, Category } from "./models";
+import categoriesData from "./categories.json";
 
 // === DATA ===
 let budgetItems: BudgetItem[] = [];
-let categories: Category[] = [];
+const categories: Category[] = categoriesData.categories;
 // === FUNKTIONER ===
-
-async function loadCategories() {
-  const response = await fetch("./categories.json");
-  const data = await response.json();
-  categories = data.categories;
-  populateCategoryDropdowns();
-}
 
 function addItem(
   type: "income" | "expense",
@@ -276,8 +271,8 @@ function populateCategoryDropdowns() {
 
 // === INIT ===
 
-async function init() {
-  await loadCategories();
+function init() {
+  populateCategoryDropdowns();
   loadFromLocalStorage();
   renderTransactions();
   updateBalance();
