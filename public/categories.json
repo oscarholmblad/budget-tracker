@@ -1,0 +1,15 @@
+{
+  "categories": [
+    { "id": "salary", "name": "Lön" },
+    { "id": "csn", "name": "CSN" },
+    { "id": "gift", "name": "Gåva" },
+    { "id": "food", "name": "Mat" },
+    { "id": "housing", "name": "Boende" },
+    { "id": "transport", "name": "Transport" },
+    { "id": "entertainment", "name": "Nöje" },
+    { "id": "shopping", "name": "Shopping" },
+    { "id": "health", "name": "Hälsa" },
+    { "id": "subscriptions", "name": "Prenumerationer" },
+    { "id": "other", "name": "Övrigt" }
+  ]
+}

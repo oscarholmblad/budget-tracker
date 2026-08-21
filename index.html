@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta
+      name="description"
+      content="En enkel budgetapp för att hålla koll på inkomster och utgifter"
+    />
+    <title>fed25d-js-inl-2-budget-app-oscarholmblad</title>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <!-- titel -->
+        <h1>Budget Tracker</h1>
+      </header>
+
+      <main>
+        <section>
+          <!-- balans -->
+          <h2>Balans</h2>
+          <p id="balance">0 kr</p>
+          <p>Inkomster: <span id="total-income">0 kr</span></p>
+          <p>Utgifter: <span id="total-expenses">0 kr</span></p>
+        </section>
+
+        <section>
+          <!-- formulär för inkomster -->
+          <h2>Lägg till inkomst</h2>
+          <form id="income-form">
+            <label for="income-description">Beskrivning</label>
+            <input
+              type="text"
+              id="income-description"
+              placeholder="Beskrivning"
+              required
+            />
+            <label for="income-amount">Belopp</label>
+            <input
+              type="number"
+              id="income-amount"
+              placeholder="Belopp"
+              required
+            />
+            <label for="income-category">Kategori</label>
+            <select id="income-category" required>
+              <option value="" disabled selected>Välj kategori</option>
+            </select>
+            <button type="submit">Lägg till</button>
+          </form>
+        </section>
+
+        <section>
+          <!-- formulär för utgifter -->
+          <h2>Lägg till utgift</h2>
+          <form id="expense-form">
+            <label for="expense-description">Beskrivning</label>
+            <input
+              type="text"
+              id="expense-description"
+              placeholder="Beskrivning"
+              required
+            />
+            <label for="expense-amount">Belopp</label>
+            <input
+              type="number"
+              id="expense-amount"
+              placeholder="Belopp"
+              required
+            />
+            <label for="expense-category">Kategori</label>
+            <select id="expense-category" required>
+              <option value="" disabled selected>Välj kategori</option>
+            </select>
+            <button type="submit">Lägg till</button>
+          </form>
+        </section>
+
+        <section>
+          <!-- transaktionslista -->
+          <h2>Transaktioner</h2>
+          <ul id="transaction-list">
+            <!-- här kommer transaktioner renderas av javascript -->
+          </ul>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

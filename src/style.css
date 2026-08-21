@@ -1,0 +1,161 @@
+/* === GRUNDLÄGGANDE === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+#app {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* === HEADER === */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #2c3e50;
+}
+
+/* === SEKTIONER === */
+section {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+/* === BALANS === */
+#balance {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.positive {
+  color: #1e8449;
+}
+
+.negative {
+  color: #e74c3c;
+}
+
+/* === FORMULÄR === */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input,
+select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+input::placeholder {
+  color: #666;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #2874a6;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #1a5276;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: white;
+  color: #666;
+  appearance: none;
+  cursor: pointer;
+}
+
+select:valid {
+  color: #333;
+}
+
+select option {
+  color: #333;
+}
+
+select option[disabled] {
+  color: #666;
+}
+
+/* === TRANSAKTIONSLISTA === */
+#transaction-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  gap: 10px;
+}
+
+#transaction-list li:last-child {
+  border-bottom: none;
+}
+
+#transaction-list button {
+  background-color: #e74c3c;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+}
+
+#transaction-list button:hover {
+  background-color: #c0392b;
+}
