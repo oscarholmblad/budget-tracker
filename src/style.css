@@ -14,6 +14,9 @@ body {
   color: #333;
   line-height: 1.6;
   padding: 20px;
+  padding-bottom: calc(20px + env(safe-area-inset-bottom));
+  overscroll-behavior-y: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 #app {
@@ -106,6 +109,8 @@ button {
   color: white;
   cursor: pointer;
   transition: background-color 0.2s;
+  min-height: 44px;
+  touch-action: manipulation;
 }
 
 button:hover {
@@ -137,25 +142,51 @@ select option[disabled] {
 }
 
 /* === TRANSAKTIONSLISTA === */
+#transaction-list {
+  list-style: none;
+}
+
 #transaction-list li {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "description amount"
+    "category    delete";
+  gap: 4px 12px;
   align-items: center;
-  padding: 10px;
+  padding: 12px 0;
   border-bottom: 1px solid #eee;
-  gap: 10px;
 }
 
 #transaction-list li:last-child {
   border-bottom: none;
 }
 
-#transaction-list button {
-  background-color: #e74c3c;
-  padding: 5px 10px;
-  font-size: 0.8rem;
+.tx-description {
+  grid-area: description;
+  font-weight: 500;
 }
 
-#transaction-list button:hover {
+.tx-category {
+  grid-area: category;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.tx-amount {
+  grid-area: amount;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.tx-delete {
+  grid-area: delete;
+  justify-self: end;
+  padding: 0 14px;
+  font-size: 0.85rem;
+  background-color: #e74c3c;
+}
+
+.tx-delete:hover {
   background-color: #c0392b;
 }

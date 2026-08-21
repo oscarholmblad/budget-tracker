@@ -198,11 +198,14 @@ function renderTransactions() {
   budgetItems.forEach((item) => {
     const li = document.createElement("li");
 
+    const categoryName =
+      categories.find((c) => c.id === item.category)?.name ?? item.category;
+
     li.innerHTML = `
-    <span>${item.description}</span>
-    <span>${item.category}</span>
-    <span>${item.type === "income" ? "+" : "-"}${item.amount} kr</span>
-    <button data-id="${item.id}">Ta bort</button>
+    <span class="tx-description">${item.description}</span>
+    <span class="tx-category">${categoryName}</span>
+    <span class="tx-amount">${item.type === "income" ? "+" : "-"}${item.amount} kr</span>
+    <button class="tx-delete" data-id="${item.id}" aria-label="Ta bort ${item.description}">Ta bort</button>
     `;
 
     const deleteBtn = li.querySelector("button");
